@@ -1,15 +1,19 @@
 import "./App.css";
-import {HomePage} from "./Features";
+import {Routes,Route} from "react-router-dom";
+import {HomePage,ProductPage} from "./Features";
 import logo from "./logo.png";
 import Mockman from "mockman-js";
 
 function App() {
   return (
     <div className="App">
-      <h1>Write</h1>
-      
-      <HomePage />
-      </div>
+      <Routes> 
+          <Route path = "/" element = { <HomePage/> }/>
+          <Route path="/products" element={<ProductPage />} />
+          <Route path="/mockman" element={<Mockman />} />
+
+      </Routes>
+    </div>
   
   );
 }
