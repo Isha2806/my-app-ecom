@@ -1,11 +1,17 @@
 import React from "react";
 import "./wishlistpage.css";
+import { Header } from "../../Components/header/header";
+import { WishCard } from "../../Components/cards/wishcard";
 const WishlistPage = () => {
     return (
-      <div>
-     <h1>This is wishlist</h1>
-     
-      </div>
+    <div class="container">
+      <main class = "main">
+         <Header/>
+         <div class = "products">
+          <WishCard/>
+         </div>
+      </main>
+    </div>
     );
   };
   
