@@ -2,6 +2,8 @@ import React,{useState,useEffect} from "react";
 import { Header } from "../../Components/header/header";
 import { Filters } from "./filterProduct";
 import { ProductCard } from "../../Components/cards/productcard";
+import { Usernav } from "../../Components/header/user-nav";
+
 import "./product.css";
 const axios = require("axios").default;
 const ProductPage = () => {
@@ -21,6 +23,7 @@ const ProductPage = () => {
     
     return (
       <div className = "container">
+        <Usernav/>
        <Header/>
         <div className = "main-container">
             <Filters/>

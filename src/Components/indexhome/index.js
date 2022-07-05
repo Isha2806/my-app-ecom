@@ -8,12 +8,14 @@ import MacScreen from "../../assets/MacBook/iphone.png";
 import MacKeyBoard from "../../assets/MacBook/section-1-bg-4.jpg";
 import { Link } from "react-router-dom";
 import { Logo } from "../../Components/logo/Logo";
+import { Usernav } from "../header/user-nav";
 
 
 const Indexhome = ()=> {  
     return(
         <div class="container">
             <section class="section-6 center">
+                <Usernav/>
                 <div class="section-6-icons">
                     <Link to = "/products" class="icon-link"> <img src={home}/></Link>
                     <Link to = "/products" class="icon-link"><img src={iphone}/></Link>
