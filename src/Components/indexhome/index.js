@@ -38,7 +38,7 @@ const Indexhome = ()=> {
                 </div>
                 </section>
             <section class="section-2" id="section-2">
-                <h1 class="section-2-heading">For Neograds'21</h1>
+                <h1 class="section-2-heading">REWARDS</h1>
                 <div class="iphones">
                     <img src = {MacScreen}   class="iphone-img-1"/>
                     <img src={MacKeyBoard}class="iphone-img-2"/>

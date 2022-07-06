@@ -3,11 +3,19 @@ import { Header } from "../../Components/header/header";
 import { Filters } from "./filterProduct";
 import { ProductCard } from "../../Components/cards/productcard";
 import { Usernav } from "../../Components/header/user-nav";
-
+import axios from "axios";
+import { useFilter } from "../../Contexts";
+import {
+	ComposeFunction,
+	sortbyPriceFunction,
+	filterByPrice,
+	filterByRatings,
+	filterByCategory,
+} from "../../utilities/filters";
 import "./product.css";
-const axios = require("axios").default;
 const ProductPage = () => {
     const [products,setProducts] = useState([]);
+    const { state } = useFilter();
     useEffect(()=>{
         (async () => {
             try{
@@ -20,7 +28,12 @@ const ProductPage = () => {
             }
         })();
 	}, []);
-    
+    const Products = ComposeFunction(
+		sortbyPriceFunction,
+		filterByPrice,
+		filterByRatings,
+		filterByCategory
+	)(state, products);
     return (
       <div className = "container">
         <Usernav/>
@@ -31,7 +44,7 @@ const ProductPage = () => {
                    <main className = "product-display-main">
                        <div className = "products">
                             {
-                                products.map((product)=>(
+                                Products.map((product)=>(
                                     <ProductCard key ={product.id} product ={product} />
                                     
 
